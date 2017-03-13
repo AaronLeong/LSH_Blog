@@ -555,35 +555,18 @@ export default class extends Base {
     }
 
     async jiemiAction() {
-        var appId = 'wx4f4bc4dec97d474b'
-        var sessionKey = 'tiihtNczf5v6AKRyjwEUhQ=='
-        var encryptedData =
-            'CiyLU1Aw2KjvrjMdj8YKliAjtP4gsMZM' +
-            'QmRzooG2xrDcvSnxIMXFufNstNGTyaGS' +
-            '9uT5geRa0W4oTOb1WT7fJlAC+oNPdbB+' +
-            '3hVbJSRgv+4lGOETKUQz6OYStslQ142d' +
-            'NCuabNPGBzlooOmB231qMM85d2/fV6Ch' +
-            'evvXvQP8Hkue1poOFtnEtpyxVLW1zAo6' +
-            '/1Xx1COxFvrc2d7UL/lmHInNlxuacJXw' +
-            'u0fjpXfz/YqYzBIBzD6WUfTIF9GRHpOn' +
-            '/Hz7saL8xz+W//FRAUid1OksQaQx4CMs' +
-            '8LOddcQhULW4ucetDf96JcR3g0gfRK4P' +
-            'C7E/r7Z6xNrXd2UIeorGj5Ef7b1pJAYB' +
-            '6Y5anaHqZ9J6nKEBvB4DnNLIVWSgARns' +
-            '/8wR2SiRS7MNACwTyrGvt9ts8p12PKFd' +
-            'lqYTopNHR1Vf7XjfhQlVsAJdNiKdYmYV' +
-            'oKlaRv85IfVunYzO0IKXsyl7JCUjCpoG' +
-            '20f0a04COwfneQAGGwd5oa+T8yO5hzuy' +
-            'Db/XcxxmK01EpqOyuxINew=='
-        var iv = 'r7BXXKkLb8qrSNn05n0qiA=='
+        var appId = ''
+        var sessionKey = '=='
+        var encryptedData =''
+        var iv = '=='
 
         var pc = new wxBizDataCrypt(appId, sessionKey)
 
         var data = pc.decryptData(encryptedData, iv)
 
         var rawData = '{"nickName":"梁仕华","gender":1,"language":"zh_CN","city":"","province":"","country":"CN","avatarUrl":"http://wx.qlogo.cn/mmopen/vi_32/9xkaQhBrbjL5EHFJ02rx5WSicsc5aJRHe0d7TldQ9CfV4zWk9JCo9BVREfuia55PWG6l1ibQVicibBL1BqlXlKMMrTA/0"}';
-        sessionKey = '4MG3EJ+xtRdnFo9Va7yoKg=='
-        var sha1String = rawData + '4MG3EJ+xtRdnFo9Va7yoKg=='
+        sessionKey = '4MG3E=='
+        var sha1String = rawData + '4MG3EJ+=='
         console.log(sha1String)
         var data2 = pc.sha1Data(sha1String)
 
@@ -676,105 +659,7 @@ export default class extends Base {
         }).find();
 
         console.log(res_contact_group_info)
-        // let img = retricon('kibo', {pixelSize: 16}).toDataURL()
-        //
-        // moment.locale('zh-cn')
-        // // let date =moment(1481441575419).twitterLong()
-        // // moment.locale('fr');
-        // let date = moment(1484116459775).fromNow()
-        // console.log(date)
-        // set up options
-        // var hash = 'd6fe8c82fb0abac17a702fd2a94eff37';
-        // var options = {
-        //     foreground: [255, 255, 255, 255],
-        //     background: [0, 0, 0, 255],
-        //     margin: 0.2,
-        //     size: 128,
-        //     format: 'svg'
-        // };
-        // var data = new Identicon(hash, 15).toString();
-        // console.log(data)
-        //
-        // //获取文件内容
-        // var writeFile = function (filePath, data) {
-        //     //将writeFile方法包装成Promise
-        //     var writeFilePromise = think.promisify(fs.writeFile, fs);
-        //     //读取文件内容
-        //     return writeFilePromise(filePath, data, "base64");
-        // }
-        // //文件上传后，需要将文件移动到项目其他地方，否则会在请求结束时删除掉该文件
-        // let uploadPath = think.RESOURCE_PATH + '/group/avatar/';
-        // think.mkdir(uploadPath);
-        // var basename = hash + '.png'
-        // await writeFile(uploadPath + basename, data).then(function (content) {
-        //     console.log(content);
-        // }).catch(function (err) {
-        //     console.error(err.stack);
-        // })
-
-        // console.log('test')
-
-
-        // let decryptData = {
-        //     openId: 'oJyYY0TQ0hvfnWI4VRezyii8h3UE',
-        //     nickName: '梁仕华',
-        //     gender: 1,
-        //     language: 'zh_CN',
-        //     city: '',
-        //     province: '',
-        //     country: 'CN',
-        //     avatarUrl: 'http://wx.qlogo.cn/mmopen/vi_32/9xkaQhBrbjL5EHFJ02rx5WSicsc5aJRHe0d7TldQ9CfV4zWk9JCo9BVREfuia55PWG6l1ibQVicibBL1BqlXlKMMrTA/0',
-        //     watermark: {timestamp: 1484231667, appid: 'wx95e88a91e78bdd57'}
-        // }
-        // let res_member_info = await this.model('member').thenAdd(decryptData, {openId: decryptData.openId + '1'});
-        // console.log('res_member_info', res_member_info)
-        //
-        // if (!think.isEmpty(res_member_info)) {
-        //
-        //     var pc = new wxBizDataCrypt(wxConfig.AppID, null)
-        //     let timestamp = global.timestamp() + ''
-        //     var token = pc.sha1Data(res_member_info.id + timestamp)
-        //
-        //     await think.cache(res_member_info.id, token, {timeout: 7 * 3600});
-        //     let token_value = await think.cache(res_member_info.id);
-        //     console.log('token_key', res_member_info.id, 'value', token_value)
-        //
-        //     return this.success()
-        // }
-
-//         await this.getConfig();
-//         let menu = await think.cache("adminenu", () => {
-//             return 'adminenu-value-session';
-//         }, {timeout: 24 * 3600});
-//
-//         console.log(menu);
-//
-//         //设置缓存
-//         think.cache("name", "value");
-//
-//         await this.session("userInfo", 'value-session');
-//
-//         let sessioninfo = await this.session("userInfo");
-//
-//         console.log(sessioninfo)
-// //删除缓存);
-// //             think.cache("name", null
-//         //获取缓存
-//         let name = await think.cache("name");
-//         console.log('name', name)
-//
-// //指定缓存类型获取，从 redis 里获取缓存
-//         await think.cache("name", undefined, {type: "redis"}).then(data => {
-//             console.log('redis', data)
-//         });
-//
-// //如果缓存 userList 不存在，则查询数据库，并将值设置到缓存中
-//         think.cache("userList", () => {
-//             return think.model("user").select();
-//         }).then(data => {
-//             console.log('redis_userList', data)
-//         });
-
+  
 
         return this.success(res_contact_group_info)
 
