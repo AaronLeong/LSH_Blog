@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>梁仕华的个人博客</title>
+    <meta name="description" content="Admin, Dashboard, Bootstrap"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/static/admin/libs/bower/jquery/dist/jquery.js"></script>
+    <link rel="shortcut icon" sizes="196x196" href="/static/admin/assets/images/logo.png">
+
+    <link rel="stylesheet" href="/static/admin/libs/bower/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet"
+          href="/static/admin/libs/bower/material-design-iconic-font/dist/css/material-design-iconic-font.css">
+    <!-- build:css ../assets/css/app.min.css -->
+    <link rel="stylesheet" href="/static/admin/libs/bower/animate.css/animate.min.css">
+    <link rel="stylesheet" href="/static/admin/libs/bower/fullcalendar/dist/fullcalendar.min.css">
+    <link rel="stylesheet" href="/static/admin/libs/bower/perfect-scrollbar/css/perfect-scrollbar.css">
+    <link rel="stylesheet" href="/static/admin/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/admin/assets/css/app.css">
+    <!-- endbuild -->
+    <!--<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900,300">-->
+</head>
+
+<body class="sb-left">
+<!--============= start main area -->
+
+<!-- APP ASIDE ==========-->
+<aside id="app-aside" class="app-aside left light">
+    <header class="aside-header">
+        <div class="animated">
+            <a href="/admin" id="app-brand" class="app-brand">
+                <span id="brand-icon" class="brand-icon"><i class="fa fa-gg"></i></span>
+                <span id="brand-name" class="brand-icon foldable">Leong</span>
+            </a>
+        </div>
+    </header><!-- #sidebar-header -->
+
+    <div class="aside-user">
+        <!-- aside-user -->
+        <div class="media">
+            <div class="media-left">
+                <div class="avatar avatar-md avatar-circle">
+                    <a href="javascript:void(0)"><img class="img-responsive" src="/static/admin/assets/images/221.jpg"
+                                                      alt="avatar"/></a>
+                </div><!-- .avatar -->
+            </div>
+            <div class="media-body">
+                <div class="foldable">
+                    <h5><a href="javascript:void(0)" class="username">Aaron Leong</a></h5>
+                    <ul>
+                        <li class="dropdown">
+                            <a href="javascript:void(0)" class="dropdown-toggle usertitle" data-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false">
+                                <small>Gold</small>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu animated flipInY">
+                                <li>
+                                    <a class="text-color"
+                                       href="http://view.jqueryfuns.com/%E9%A2%84%E8%A7%88-/2016/6/21/index.html">
+                                        <span class="m-r-xs"><i class="fa fa-home"></i></span>
+                                        <span>Home</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="text-color" href="profile.html">
+                                        <span class="m-r-xs"><i class="fa fa-user"></i></span>
+                                        <span>Profile</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="text-color" href="settings.html">
+                                        <span class="m-r-xs"><i class="fa fa-gear"></i></span>
+                                        <span>Settings</span>
+                                    </a>
+                                </li>
+                                <li role="separator" class="divider"></li>
+                                <li>
+                                    <a class="text-color" href="logout.html">
+                                        <span class="m-r-xs"><i class="fa fa-power-off"></i></span>
+                                        <span>Home</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /aside-user -->
+    </div><!-- #aside-user -->
+
+    <div class="aside-scroll">
+        <div id="aside-scroll-inner" class="aside-scroll-inner">
+            <ul class="aside-menu aside-left-menu">
+                <li class="menu-item has-submenu">
+                    <a href="javascript:void(0)" class="menu-link submenu-toggle">
+                        <span class="menu-icon"><i class="zmdi zmdi-view-dashboard zmdi-hc-lg"></i></span>
+                        <span class="menu-text foldable">Dashboard</span>
+                        <span class="menu-caret foldable"><i class="zmdi zmdi-hc-sm zmdi-chevron-right"></i></span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="/admin/index">Dashboard 1</a></li>
+                        <li><a href="/admin/index">Dashboard 2</a></li>
+                    </ul>
+                </li><!-- .menu-item -->
+                <li class="menu-item has-submenu">
+                    <a href="javascript:void(0)" class="menu-link submenu-toggle">
+                        <span class="menu-icon"><i class="zmdi zmdi-pages zmdi-hc-lg"></i></span>
+                        <span class="menu-text foldable">Posts</span>
+                        <span class="menu-caret foldable"><i class="zmdi zmdi-hc-sm zmdi-chevron-right"></i></span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="/admin/post/list">Posts List</a></li>
+                        <li><a href="/admin/post/new">Add Post</a></li>
+                        <li><a href="/admin/post/markdown">Add Markdown</a></li>
+                        <li><a href="/admin/post/draftlist">Draftlist</a></li>
+                    </ul>
+                </li><!-- .menu-item -->
+
+                <li class="menu-item has-submenu">
+                    <a href="javascript:void(0)" class="menu-link submenu-toggle">
+                        <span class="menu-icon"><i class="zmdi zmdi-chart zmdi-hc-lg"></i></span>
+                        <span class="menu-text foldable">Menu</span>
+                        <span class="menu-caret foldable"><i class="zmdi zmdi-hc-sm zmdi-chevron-right"></i></span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="/admin/menu/list">Menu List</a></li>
+                        <li><a href="/admin/menu/new">Add Menu</a></li>
+                    </ul>
+                </li><!-- .menu-item -->
+
+                <li class="menu-item has-submenu">
+                    <a href="javascript:void(0)" class="menu-link submenu-toggle">
+                        <span class="menu-icon"><i class="zmdi zmdi-apps zmdi-hc-lg"></i></span>
+                        <span class="menu-text foldable">Categories</span>
+                        <span class="menu-caret foldable"><i class="zmdi zmdi-hc-sm zmdi-chevron-right"></i></span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="/admin/categories/list">Categories List</a></li>
+                        <!--<li><a href="/admin/categories/new">Add Categories</a></li>-->
+                    </ul>
+                </li><!-- .menu-item -->
+                <li class="menu-item has-submenu">
+                    <a href="javascript:void(0)" class="menu-link submenu-toggle">
+                        <span class="menu-icon"><i class="zmdi zmdi-pages zmdi-hc-lg"></i></span>
+                        <span class="menu-text foldable">Tags</span>
+                        <span class="menu-caret foldable"><i class="zmdi zmdi-hc-sm zmdi-chevron-right"></i></span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="/admin/tags/list">Tags List</a></li>
+                        <!--<li><a href="/admin/tags/new">Add Tag</a></li>-->
+                    </ul>
+                </li><!-- .menu-item -->
+
+                <li class="menu-item has-submenu">
+                    <a href="javascript:void(0)" class="menu-link submenu-toggle">
+                        <span class="menu-icon"><i class="zmdi zmdi-puzzle-piece zmdi-hc-lg"></i></span>
+                        <span class="menu-text foldable">Menu</span>
+                        <span class="menu-caret foldable"><i class="zmdi zmdi-hc-sm zmdi-chevron-right"></i></span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="/admin/menu/list">Menu List</a></li>
+                        <!--<li><a href="/admin/menu/new">Add List</a></li>-->
+                    </ul>
+                </li><!-- .menu-item -->
+
+                <li class="menu-item has-submenu">
+                    <a href="javascript:void(0)" class="menu-link submenu-toggle">
+                        <span class="menu-icon"><i class="zmdi zmdi-pin zmdi-hc-lg"></i></span>
+                        <span class="menu-text foldable">Profile</span>
+                        <span class="menu-caret foldable"><i class="zmdi zmdi-hc-sm zmdi-chevron-right"></i></span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="/admin/user">User Info</a></li>
+                        <li><a href="/admin/user/about">About Me</a></li>
+                        <li><a href="/admin/user/updatepassword">Update Password</a></li>
+                    </ul>
+                </li><!-- .menu-item -->
+
+            </ul>
+            <hr>
+            <footer id="aside-footer">
+                <ul class="aside-menu aside-left-menu">
+                    <li class="menu-item">
+                        <a href="javascript:void(0)" class="menu-link">
+                            <span class="menu-icon"><i class="zmdi zmdi-file-text zmdi-hc-lg"></i></span>
+                            <span class="menu-text foldable">Documentation</span>
+                        </a>
+                    </li><!-- .menu-item -->
+
+                    <li class="menu-item">
+                        <a href="/admin/setting" class="menu-link">
+                            <span class="menu-icon"><i class="zmdi zmdi-settings zmdi-hc-lg"></i></span>
+                            <span class="menu-text foldable">Settings</span>
+                        </a>
+                    </li><!-- .menu-item -->
+
+                    <li class="menu-item">
+                        <a href="javascript:void(0)" class="menu-link">
+                            <span class="menu-icon"><i class="zmdi zmdi-language-javascript zmdi-hc-lg"></i></span>
+                            <span class="menu-text foldable">System Version</span>
+                        </a>
+                    </li><!-- .menu-item -->
+                </ul>
+            </footer><!-- #sidebar-footer -->
+        </div><!-- .aside-scroll-inner -->
+    </div><!-- #aside-scroll -->
+</aside>
+<!--========== END app aside -->
+
+<!-- APP NAVBAR ==========-->
+<nav id="app-navbar" class="app-navbar p-l-lg p-r-md primary">
+    <div id="navbar-header" class="pull-left">
+        <button id="aside-fold" class="hamburger visible-lg-inline-block hamburger--arrowalt is-active js-hamburger"
+                type="button">
+			<span class="hamburger-box">
+				<span class="hamburger-inner"></span>
+			</span>
+        </button>
+        <button id="aside-toggle" class="hamburger hidden-lg hamburger--spin js-hamburger" type="button">
+			<span class="hamburger-box">
+				<span class="hamburger-inner"></span>
+			</span>
+        </button>
+        <h5 id="page-title" class="visible-md-inline-block visible-lg-inline-block m-l-md">Dashboard</h5>
+    </div>
+
+    <div>
+        <ul id="top-nav" class="pull-right">
+            <li class="nav-item dropdown">
+                <a href="javascript:void(0)" id="navbar-search-open" class="navbar-search-open">
+                    <i class="zmdi zmdi-hc-lg zmdi-search"></i>
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                   aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-hc-lg zmdi-notifications"></i></a>
+                <div class="media-group dropdown-menu animated flipInY">
+                    <a href="javascript:void(0)" class="media-group-item">
+                        <div class="media">
+                            <div class="media-left">
+                                <div class="avatar avatar-xs avatar-circle">
+                                    <img src="/static/admin/assets/images/221.jpg" alt="">
+                                    <i class="status status-online"></i>
+                                </div>
+                            </div>
+                            <div class="media-body">
+                                <h5 class="media-heading">John Doe</h5>
+                                <small class="media-meta">Active now</small>
+                            </div>
+                        </div>
+                    </a><!-- .media-group-item -->
+
+                    <a href="javascript:void(0)" class="media-group-item">
+                        <div class="media">
+                            <div class="media-left">
+                                <div class="avatar avatar-xs avatar-circle">
+                                    <img src="/static/admin/assets/images/205.jpg" alt="">
+                                    <i class="status status-offline"></i>
+                                </div>
+                            </div>
+                            <div class="media-body">
+                                <h5 class="media-heading">John Doe</h5>
+                                <small class="media-meta">2 hours ago</small>
+                            </div>
+                        </div>
+                    </a><!-- .media-group-item -->
+
+                    <a href="javascript:void(0)" class="media-group-item">
+                        <div class="media">
+                            <div class="media-left">
+                                <div class="avatar avatar-xs avatar-circle">
+                                    <img src="/static/admin/assets/images/207.jpg" alt="">
+                                    <i class="status status-away"></i>
+                                </div>
+                            </div>
+                            <div class="media-body">
+                                <h5 class="media-heading">Sara Smith</h5>
+                                <small class="media-meta">idle 5 min ago</small>
+                            </div>
+                        </div>
+                    </a><!-- .media-group-item -->
+
+                    <a href="javascript:void(0)" class="media-group-item">
+                        <div class="media">
+                            <div class="media-left">
+                                <div class="avatar avatar-xs avatar-circle">
+                                    <img src="/static/admin/assets/images/211.jpg" alt="">
+                                    <i class="status status-away"></i>
+                                </div>
+                            </div>
+                            <div class="media-body">
+                                <h5 class="media-heading">Donia Dyab</h5>
+                                <small class="media-meta">idle 5 min ago</small>
+                            </div>
+                        </div>
+                    </a><!-- .media-group-item -->
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                   aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-hc-lg zmdi-settings"></i></a>
+                <ul class="dropdown-menu animated flipInY">
+                    <li><a href="javascript:void(0)"><i class="zmdi m-r-md zmdi-hc-lg zmdi-account-box"></i>My
+                        Profile</a></li>
+                    <li><a href="javascript:void(0)"><i
+                            class="zmdi m-r-md zmdi-hc-lg zmdi-balance-wallet"></i>Balance</a></li>
+                    <li><a href="javascript:void(0)"><i
+                            class="zmdi m-r-md zmdi-hc-lg zmdi-phone-msg"></i>Connection<span
+                            class="label _bgtext-primary">3</span></a></li>
+                    <li><a href="javascript:void(0)"><i class="zmdi m-r-md zmdi-hc-lg zmdi-info"></i>privacy</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="javascript:void(0)" class="side-panel-toggle"
+                   data-toggle="class"
+                   data-target="#side-panel"
+                   data-class="open"
+                   role="button">
+                    <i class="zmdi zmdi-hc-lg zmdi-apps"></i>
+                </a>
+                <div id="side-panel" class="side-panel">
+                    <div class="panel-header">
+                        <h4 class="panel-title">Friends</h4>
+                    </div>
+                    <div class="scrollable-container">
+                        <div class="media-group">
+                            <a href="javascript:void(0)" class="media-group-item">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <div class="avatar avatar-xs avatar-circle">
+                                            <img src="/static/admin/assets/images/221.jpg" alt="">
+                                            <i class="status status-online"></i>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h5 class="media-heading">John Doe</h5>
+                                        <small class="media-meta">active now</small>
+                                    </div>
+                                </div>
+                            </a><!-- .media-group-item -->
+
+                            <a href="javascript:void(0)" class="media-group-item">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <div class="avatar avatar-xs avatar-circle">
+                                            <img src="/static/admin/assets/images/205.jpg" alt="">
+                                            <i class="status status-online"></i>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h5 class="media-heading">John Doe</h5>
+                                        <small class="media-meta">active now</small>
+                                    </div>
+                                </div>
+                            </a><!-- .media-group-item -->
+
+                            <a href="javascript:void(0)" class="media-group-item">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <div class="avatar avatar-xs avatar-circle">
+                                            <img src="/static/admin/assets/images/206.jpg" alt="">
+                                            <i class="status status-online"></i>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h5 class="media-heading">Adam Kiti</h5>
+                                        <small class="media-meta">active now</small>
+                                    </div>
+                                </div>
+                            </a><!-- .media-group-item -->
+
+                            <a href="javascript:void(0)" class="media-group-item">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <div class="avatar avatar-xs avatar-circle">
+                                            <img src="/static/admin/assets/images/207.jpg" alt="">
+                                            <i class="status status-away"></i>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h5 class="media-heading">Jane Doe</h5>
+                                        <small class="media-meta">away</small>
+                                    </div>
+                                </div>
+                            </a><!-- .media-group-item -->
+
+                            <a href="javascript:void(0)" class="media-group-item">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <div class="avatar avatar-xs avatar-circle">
+                                            <img src="/static/admin/assets/images/208.jpg" alt="">
+                                            <i class="status status-away"></i>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h5 class="media-heading">Sara Adams</h5>
+                                        <small class="media-meta">away</small>
+                                    </div>
+                                </div>
+                            </a><!-- .media-group-item -->
+
+                            <a href="javascript:void(0)" class="media-group-item">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <div class="avatar avatar-xs avatar-circle">
+                                            <img src="/static/admin/assets/images/209.jpg" alt="">
+                                            <i class="status status-away"></i>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h5 class="media-heading">Smith Doe</h5>
+                                        <small class="media-meta">away</small>
+                                    </div>
+                                </div>
+                            </a><!-- .media-group-item -->
+
+                            <a href="javascript:void(0)" class="media-group-item">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <div class="avatar avatar-xs avatar-circle">
+                                            <img src="/static/admin/assets/images/219.jpg" alt="">
+                                            <i class="status status-away"></i>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h5 class="media-heading">Dana Dyab</h5>
+                                        <small class="media-meta">away</small>
+                                    </div>
+                                </div>
+                            </a><!-- .media-group-item -->
+
+                            <a href="javascript:void(0)" class="media-group-item">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <div class="avatar avatar-xs avatar-circle">
+                                            <img src="/static/admin/assets/images/210.jpg" alt="">
+                                            <i class="status status-offline"></i>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h5 class="media-heading">Jeffry Way</h5>
+                                        <small class="media-meta">2 hours ago</small>
+                                    </div>
+                                </div>
+                            </a><!-- .media-group-item -->
+
+                            <a href="javascript:void(0)" class="media-group-item">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <div class="avatar avatar-xs avatar-circle">
+                                            <img src="/static/admin/assets/images/211.jpg" alt="">
+                                            <i class="status status-offline"></i>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h5 class="media-heading">Jane Doe</h5>
+                                        <small class="media-meta">5 hours ago</small>
+                                    </div>
+                                </div>
+                            </a><!-- .media-group-item -->
+
+                            <a href="javascript:void(0)" class="media-group-item">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <div class="avatar avatar-xs avatar-circle">
+                                            <img src="/static/admin/assets/images/212.jpg" alt="">
+                                            <i class="status status-offline"></i>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h5 class="media-heading">Adam Khoury</h5>
+                                        <small class="media-meta">22 minutes ago</small>
+                                    </div>
+                                </div>
+                            </a><!-- .media-group-item -->
+
+                            <a href="javascript:void(0)" class="media-group-item">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <div class="avatar avatar-xs avatar-circle">
+                                            <img src="/static/admin/assets/images/207.jpg" alt="">
+                                            <i class="status status-offline"></i>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h5 class="media-heading">Sara Smith</h5>
+                                        <small class="media-meta">2 days ago</small>
+                                    </div>
+                                </div>
+                            </a><!-- .media-group-item -->
+
+                            <a href="javascript:void(0)" class="media-group-item">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <div class="avatar avatar-xs avatar-circle">
+                                            <img src="/static/admin/assets/images/211.jpg" alt="">
+                                            <i class="status status-offline"></i>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h5 class="media-heading">Donia Dyab</h5>
+                                        <small class="media-meta">3 days ago</small>
+                                    </div>
+                                </div>
+                            </a><!-- .media-group-item -->
+                        </div>
+                    </div><!-- .scrollable-container -->
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- navbar search -->
+    <div id="navbar-search" class="navbar-search">
+        <form action="#">
+            <span class="search-icon"><i class="fa fa-search"></i></span>
+            <input class="search-field" type="search" placeholder="search..."/>
+        </form>
+        <button id="search-close" class="search-close">
+            <i class="fa fa-close"></i>
+        </button>
+    </div><!-- END navbar search -->
+</nav>
+<!--========== END app navbar -->
+
+
+{% block container %}
+
+{% endblock %}
+
+
+<!-- APP CUSTOMIZER -->
+<div id="app-customizer" class="app-customizer">
+    <a href="javascript:void(0)"
+       class="app-customizer-toggle theme-color"
+       data-toggle="class"
+       data-class="open"
+       data-active="false"
+       data-target="#app-customizer">
+        <i class="fa fa-gear"></i>
+    </a>
+    <div class="customizer-tabs">
+        <!-- tabs list -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="inbox.html#aside-customizer" aria-controls="stream"
+                                                      role="tab" data-toggle="tab">Sidebar</a></li>
+            <li role="presentation"><a href="inbox.html#navbar-customizer" aria-controls="photos" role="tab"
+                                       data-toggle="tab">Navbar</a></li>
+        </ul><!-- .nav-tabs -->
+
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane in active fade" id="aside-customizer">
+                <div class="hide-top-bar visible-lg-block">
+                    <div class="m-b-md">
+                        <label for="aside-fold">Fold Sidebar</label>
+                        <div class="pull-right">
+                            <input id="aside-fold-switch" type="checkbox" data-switchery data-size="small"/>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="radio radio-default m-b-md">
+                    <input type="radio" id="aside-light-theme" name="aside-theme" data-theme="light">
+                    <label for="aside-light-theme">Light</label>
+                </div>
+                <div class="radio radio-inverse">
+                    <input type="radio" id="aside-dark-theme" name="aside-theme" data-theme="dark">
+                    <label for="aside-dark-theme">Dark</label>
+                </div>
+                <hr>
+                <div>
+                    <button id="aside-reset-btn" class="btn btn-block btn-outline btn-primary">Reset</button>
+                </div>
+            </div><!-- .tab-pane -->
+            <div role="tabpanel" class="tab-pane fade" id="navbar-customizer">
+                <div class="radio radio-primary m-b-md">
+                    <input type="radio" id="navbar-primary-theme" name="navbar-theme" data-theme="primary">
+                    <label for="navbar-primary-theme" class="text-primary">Primary</label>
+                </div>
+                <div class="radio radio-success m-b-md">
+                    <input type="radio" id="navbar-success-theme" name="navbar-theme" data-theme="success">
+                    <label for="navbar-success-theme" class="text-success">Success</label>
+                </div>
+                <div class="radio radio-danger m-b-md">
+                    <input type="radio" id="navbar-danger-theme" name="navbar-theme" data-theme="danger">
+                    <label for="navbar-danger-theme" class="text-danger">Danger</label>
+                </div>
+                <div class="radio radio-warning m-b-md">
+                    <input type="radio" id="navbar-warning-theme" name="navbar-theme" data-theme="warning">
+                    <label for="navbar-warning-theme" class="text-warning">Orange</label>
+                </div>
+                <div class="radio radio-pink m-b-md">
+                    <input type="radio" id="navbar-pink-theme" name="navbar-theme" data-theme="pink">
+                    <label for="navbar-pink-theme" class="text-pink">Pink</label>
+                </div>
+                <div class="radio radio-purple m-b-md">
+                    <input type="radio" id="navbar-purple-theme" name="navbar-theme" data-theme="purple">
+                    <label for="navbar-purple-theme" class="text-purple">Purple</label>
+                </div>
+                <div class="radio radio-inverse m-b-md">
+                    <input type="radio" id="navbar-inverse-theme" name="navbar-theme" data-theme="inverse">
+                    <label for="navbar-inverse-theme" class="text-inverse">Inverse</label>
+                </div>
+                <div class="radio radio-dark">
+                    <input type="radio" id="navbar-dark-theme" name="navbar-theme" data-theme="dark">
+                    <label for="navbar-dark-theme" class="text-dark">Dark</label>
+                </div>
+                <hr>
+                <div>
+                    <button id="navbar-reset-btn" class="btn btn-block btn-outline btn-primary">Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /#app-customizer -->
+
+<!-- build:js ../assets/js/core.min.js -->
+
+<script src="/static/admin/libs/bower/jquery-ui/jquery-ui.min.js"></script>
+<script src="/static/admin/libs/bower/jQuery-Storage-API/jquery.storageapi.min.js"></script>
+<script src="/static/admin/libs/bower/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+<script src="/static/admin/libs/bower/superfish/dist/js/hoverIntent.js"></script>
+<script src="/static/admin/libs/bower/superfish/dist/js/superfish.js"></script>
+<script src="/static/admin/libs/bower/jquery-slimscroll/jquery.slimscroll.js"></script>
+<script src="/static/admin/libs/bower/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
+<script src="/static/admin/libs/bower/PACE/pace.min.js"></script>
+<!-- endbuild -->
+
+<!-- build:js ../assets/js/app.min.js -->
+<script src="/static/admin/assets/js/library.js"></script>
+<script src="/static/admin/assets/js/plugins.js"></script>
+<script src="/static/admin/assets/js/app.js"></script>
+<!-- endbuild -->
+<script src="/static/admin/libs/bower/moment/moment.js"></script>
+<script src="/static/admin/libs/bower/fullcalendar/dist/fullcalendar.min.js"></script>
+<script src="/static/admin/assets/js/fullcalendar.js"></script>
+
+{% block src %}
+
+{% endblock %}
+
+</body>
+</html>

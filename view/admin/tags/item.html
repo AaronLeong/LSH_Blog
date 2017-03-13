@@ -1,0 +1,176 @@
+{% extends "../inc/base.html" %}
+
+{% block container %}
+
+<!-- APP MAIN ==========-->
+<main id="app-main" class="app-main">
+    <div class="wrap">
+        <section class="app-content">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <h3>Tags</h3>
+                    <div class="m-b-xl">
+                        liangshihua.cn
+                    </div>
+                </div>
+                <div class="col-md-10 col-md-offset-1">
+                    <form action="/admin/tags/update" method="post" class="form-horizontal">
+                        <div class="form-group">
+                            <label for="title" class="col-sm-3">Tags ID</label>
+                            <div class="col-sm-9">
+                                <input type="text" id="title" name="_id" class="form-control" value="{{tag._id}}" disabled>
+                            </div>
+                        </div><!-- .form-group -->
+                        <div class="form-group">
+                            <label for="title" class="col-sm-3">文章标题</label>
+                            <div class="col-sm-9">
+                                <input type="text" id="title" name="title" class="form-control" value="{{tag.title}}">
+                            </div>
+                        </div><!-- .form-group -->
+                        <div class="form-group">
+                            <label for="control-demo-6" class="col-sm-3">文章分类</label>
+                            <div id="control-demo-6" class="col-sm-9">
+                                <select class="form-control">
+                                    {% for item in categories %}
+                                    <option value="{{item._id}}" {{ "selected" if item.id==tagselectedId else "" }} >{{item.catename}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div><!-- .form-group -->
+
+                        <div class="form-group">
+                            <label for="control-demo-6" class="col-sm-3">文章标签</label>
+                            <div id="control-demo-6" class="col-sm-9">
+                                <select class="form-control">
+                                    {% for item in tags %}
+                                    <option value="{{item.id}}" selected="{{ " selected" if item.id==cateId else "" }}">{{item.tagname}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div><!-- .form-group -->
+
+                        <div class="form-group">
+                            <label for="description" class="col-sm-3">文章摘要</label>
+                            <div class="col-sm-9">
+                                <input type="text" id="description" name="abstract" class="form-control"
+                                       value="{{tag.abstract}}">
+                            </div>
+                        </div><!-- .form-group -->
+                        <div class="form-group">
+                            <label for="keywords" class="col-sm-3">关键字</label>
+                            <div class="col-sm-9">
+                                <input type="text" id="keywords" name="keywords" class="form-control"
+                                       value="{{tag.keywords}}">
+                            </div>
+                        </div><!-- .form-group -->
+                        <div class="form-group">
+                            <label for="editor" class="col-sm-3">文章内容</label>
+                            <div class="col-sm-9">
+                                <textarea name="content" id="editor"
+                                          style="height:400px;max-height:500px;" class="form-control"
+                                          cols="30" rows="10">{{tag.content}}</textarea>
+                            </div>
+                        </div><!-- .form-group -->
+                        <div class="form-group">
+                            <div class="col-sm-9 col-sm-offset-3 m-b-sm">
+                                <!-- Use the <code>.checkbox-inline</code> or <code>.radio-inline</code> classes on a series of checkboxes or radios for controls that appear on the same line. -->
+                            </div>
+                            <label class="col-sm-3">文章推荐</label>
+                            <div class="col-sm-9">
+                                <div class="checkbox checkbox-danger">
+                                    <input type="checkbox" id="totop" name="totop" {{ "checked" if tag.totop=="on" else ""}}/>
+                                    <label for="totop">置顶</label>
+                                </div>
+                                <div class="checkbox checkbox-primary">
+                                    <input type="checkbox" id="torecom" name="torecom" {{ "checked" if tag.torecom=="on" else "" }}/>
+                                    <label for="torecom">推荐</label>
+                                </div>
+                                <div class="checkbox checkbox-success">
+                                    <input type="checkbox" id="topicrecom" name="topicrecom" {{ "checked" if tag.topicrecom=="on" else "" }}/>
+                                    <label for="topicrecom">图文推荐</label>
+                                </div>
+                                <div class="checkbox checkbox-warning">
+                                    <input type="checkbox" id="caterecom" name="caterecom" {{ "checked" if tag.caterecom=="on" else "" }}/>
+                                    <label for="caterecom">分类推荐</label>
+                                </div>
+                            </div>
+                        </div><!-- .form-group -->
+                        <div class="form-group">
+                            <div class="col-sm-9 col-sm-offset-3 m-b-sm">
+                                <!-- Use the <code>.checkbox-inline</code> or <code>.radio-inline</code> classes on a series of checkboxes or radios for controls that appear on the same line. -->
+                            </div>
+                            <label for="publish" class="col-sm-3">立即发布</label>
+                            <div class="col-sm-9">
+                                <div class="checkbox checkbox-success">
+                                    <input type="checkbox" id="publish" name="publish" {{ "checked" if tag.publish=="on" else "" }}/>
+                                    <label for="publish">是</label>
+                                </div>
+                            </div>
+                        </div><!-- .form-group -->
+                        <div class="form-group">
+                            <div class="col-sm-9 col-sm-offset-3 m-b-sm">
+                                <!-- Use the <code>.checkbox-inline</code> or <code>.radio-inline</code> classes on a series of checkboxes or radios for controls that appear on the same line. -->
+                            </div>
+                            <label for="allowcomment" class="col-sm-3">允许评论</label>
+                            <div class="col-sm-9">
+                                <div class="checkbox checkbox-success">
+                                    <input type="checkbox" id="allowcomment" name="allowcomment" {{ "checked" if
+                                    tag.allowcomment==1 else "" }}/>
+                                    <label for="allowcomment">是</label>
+                                </div>
+                            </div>
+                        </div><!-- .form-group -->
+
+                        <div class="form-group">
+                            <div class="col-sm-9 col-sm-offset-3">
+                                <button type="submit" class="btn mw-md btn-primary">确定</button>
+                            </div>
+                        </div><!-- .form-group -->
+                    </form>
+                </div>
+            </div><!-- END row -->
+        </section><!-- #dash-content -->
+    </div><!-- .wrap -->
+
+    <!-- APP FOOTER -->
+    <div class="wrap p-t-0">
+        <footer class="app-footer">
+            <div class="clearfix">
+                <ul class="footer-menu pull-right">
+                    <li><a href="javascript:void(0)">Careers</a></li>
+                    <li><a href="javascript:void(0)">Privacy Policy</a></li>
+                    <li><a href="javascript:void(0)">Feedback <i class="fa fa-angle-up m-l-md"></i></a></li>
+                </ul>
+                <div class="copyright pull-left">Copyright AaronLeong 2016 &copy;</div>
+            </div>
+        </footer>
+    </div>
+    <!-- /#app-footer -->
+</main>
+
+
+<link rel="stylesheet" type="text/css" href="/static/admin/markdown/wangeditor/css/wangEditor.min.css">
+<script type="text/javascript" src="/static/admin/markdown/wangeditor/js/wangEditor.min.js"></script>
+<script typeof="text/javascript ">
+    var editor = new wangEditor('editor');
+    editor.create();
+
+    //    editor.config.uploadParams = {
+    //        __CSRF__:G_csrf
+    //    };
+    editor.config.emotions = {
+        'default': {
+            title: '默认',
+            data: '/static/emotions.data'
+        }
+    };
+    editor.config.uploadImgFileName = 'thumb_img';
+    editor.config.uploadImgUrl = '/admin/file/uploadeditor';
+    console.log(G_csrf);
+    // 表情
+    editor.create();
+
+</script>
+{% endblock %}
+
+

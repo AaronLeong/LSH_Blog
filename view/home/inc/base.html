@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--welcome to here
+一张网页，要经历怎样的过程，才能抵达用户面前？
+一位新人，要经历怎样的成长，才能站在技术之巅？
+探寻这里的秘密；
+体验这里的挑战；
+成为这里的主人；
+加入我们，你，可以影响世界。
+
+抄袭百度的 哈哈哈哈哈哈哈哈哈
+-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="shortcut icon" href="/static/home/images/favicon/favicon.png" type="image/x-icon">
+    <link rel="icon" href="/static/home/images/favicon/favicon.png" type="image/x-icon">
+
+    <title>梁仕华的个人博客</title>
+
+    <!--Library Styles-->
+    <link href="/static/home/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/home/css/lib/font-awesome.css" rel="stylesheet">
+    <link href="/static/home/css/lib/nivo-lightbox.css" rel="stylesheet">
+    <link href="/static/home/css/lib/nivo-themes/default/default.css" rel="stylesheet">
+    <!--Template Styles-->
+    <link href="/static/home/css/style.css" rel="stylesheet">
+    <link href="/static/home/css/scheme/purple.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="/static/home/js/html5shiv.js"></script>
+    <script src="/static/home/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body data-spy="scroll">
+
+
+<!-- Preloader -->
+<div id="preloader">
+    <div id="status"></div>
+</div>
+
+<div id="main-wrapper">
+    <div id="container">
+        {% import "./slider_menu.html" as slider_menu %}
+
+        {{ slider_menu.menu(menu) }}
+
+        {% block container %}
+
+        {% endblock %}
+    </div>
+    {% include "./footer.html" %}
+</div>
+
+
+<!-- Back to top -->
+<div id="backtotop">
+    <a class="to-top-btn sscroll" href="/index.html#home"><i class="fa fa-angle-double-up"></i></a>
+</div>
+
+
+<!-- Library Scripts -->
+<script src="/static/home/js/jquery-1.10.2.min.js"></script>
+<script src="/static/home/js/lib/jquery.preloader.js"></script>
+<script src="/static/home/js/lib/nivo-lightbox.min.js"></script>
+<script src="/static/home/js/bootstrap.min.js"></script>
+<script src="/static/home/js/lib/jquery.superslides.min.js"></script>
+<script src="/static/home/js/lib/smoothscroll.js"></script>
+<!--<script src="/static/home/js/lib/jquery.sudoslider.min.js"></script>-->
+<script src="/static/home/js/lib/jquery.bxslider.min.js"></script>
+<script src="/static/home/js/lib/jquery.mixitup.min.js"></script>
+<script src="/static/home/js/lib/jquery.backtotop.js"></script>
+<script src="/static/home/js/lib/jquery.carouFredSel-6.2.1-packed.js"></script>
+<!--<script src="/static/home/js/lib/retina.min.js"></script>-->
+
+<!-- Custom Script -->
+<script src="/static/home/js/main.js"></script>
+</body>
+<script>
+    console.log("一张网页，要经历怎样的过程，才能抵达用户面前？\n一位新人，要经历怎样的成长，才能站在技术之巅？\n探寻这里的秘密；\n体验这里的挑战；\n成为这里的主人；\n加入我们，你，可以影响世界。抄袭百度的 哈哈哈哈哈哈哈哈哈")
+</script>
+</html>

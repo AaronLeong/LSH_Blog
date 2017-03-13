@@ -1,0 +1,116 @@
+{% extends "../inc/base.html" %}
+
+{% block container %}
+<!-- APP MAIN ==========-->
+<main id="app-main" class="app-main">
+    <div class="wrap">
+        <section class="app-content">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <h3>系统设置</h3>
+                    <div class="m-b-xl">
+                        liangshihua.cn
+                    </div>
+                </div>
+                <div class="col-md-10 col-md-offset-1">
+                    <form action="/admin/setting/save" method="post" class="form-horizontal">
+                        <div class="form-group">
+                            <label for="title" class="col-sm-3">标题</label>
+                            <div class="col-sm-9">
+                                <input type="text" id="title" name="title" class="form-control" value="{{sys_setting.title}}">
+                            </div>
+                        </div><!-- .form-group -->
+                        <div class="form-group">
+                            <label for="description" class="col-sm-3">描述</label>
+                            <div class="col-sm-9">
+                                <input type="text" id="description" name="description" class="form-control" value="{{sys_setting.description}}">
+                            </div>
+                        </div><!-- .form-group -->
+                        <div class="form-group">
+                            <label for="keywords" class="col-sm-3">关键字</label>
+                            <div class="col-sm-9">
+                                <input type="text" id="keywords" name="keywords" class="form-control" value="{{sys_setting.keywords}}">
+                            </div>
+                        </div><!-- .form-group -->
+                        <div class="form-group">
+                            <label for="weburl" class="col-sm-3">网址</label>
+                            <div class="col-sm-9">
+                                <input type="text" id="weburl" name="weburl" class="form-control"
+                                       placeholder="liangshihua.cn" value="{{sys_setting.weburl}}">
+                            </div>
+                        </div><!-- .form-group -->
+
+                        <div class="form-group">
+                            <label for="copyright" class="col-sm-3">底部版权</label>
+                            <div class="col-sm-9">
+                                <input class="form-control" id="copyright" name="copyright" type="text"
+                                       placeholder="" value="{{sys_setting.copyright}}">
+                            </div>
+                        </div><!-- .form-group -->
+
+                        <div class="form-group">
+                            <label for="links" class="col-sm-3">友情链接</label>
+                            <div class="col-sm-9">
+                                <input class="form-control" id="links" name="links" type="text"
+                                       placeholder="" value="{{sys_setting.links}}">
+                            </div>
+                        </div><!-- .form-group -->
+
+                        <div class="form-group">
+                            <label for="analysis" class="col-sm-3">统计代码</label>
+                            <div class="col-sm-9">
+                                <input class="form-control" id="analysis" name="analysis" type="text"
+                                       placeholder="" value="{{sys_setting.analysis}}">
+                            </div>
+                        </div><!-- .form-group -->
+
+                        <div class="form-group">
+                            <label for="readonlyInput" class="col-sm-3">QQ openid</label>
+                            <div class="col-sm-9">
+                                <input class="form-control" id="readonlyInput" type="text"
+                                       placeholder="" name="qq_openid" value="{{sys_setting.qq_openid}}">
+                            </div>
+                        </div><!-- .form-group -->
+
+
+                        <div class="form-group">
+                            <div class="col-sm-9 col-sm-offset-3 m-b-sm">
+                                <!-- Use the <code>.checkbox-inline</code> or <code>.radio-inline</code> classes on a series of checkboxes or radios for controls that appear on the same line. -->
+                            </div>
+                            <label for="allow_register_true" class="col-sm-3">允许注册</label>
+                            <div class="col-sm-9">
+                                <div class="checkbox checkbox-success">
+                                    <input type="checkbox" id="allow_register_true" name="allow_register"/>
+                                    <label for="allow_register_true">允许</label>
+                                </div>
+                            </div>
+                        </div><!-- .form-group -->
+
+                        <div class="form-group">
+                            <div class="col-sm-9 col-sm-offset-3">
+                                <button type="submit" class="btn mw-md btn-primary">确定</button>
+                            </div>
+                        </div><!-- .form-group -->
+                    </form>
+                </div>
+            </div><!-- END row -->
+        </section><!-- #dash-content -->
+    </div><!-- .wrap -->
+
+    <!-- APP FOOTER -->
+    <div class="wrap p-t-0">
+        <footer class="app-footer">
+            <div class="clearfix">
+                <ul class="footer-menu pull-right">
+                    <li><a href="javascript:void(0)">Careers</a></li>
+                    <li><a href="javascript:void(0)">Privacy Policy</a></li>
+                    <li><a href="javascript:void(0)">Feedback <i class="fa fa-angle-up m-l-md"></i></a></li>
+                </ul>
+                <div class="copyright pull-left">Copyright AaronLeong 2016 &copy;</div>
+            </div>
+        </footer>
+    </div>
+    <!-- /#app-footer -->
+</main>
+<!--========== END app main -->
+{% endblock %}

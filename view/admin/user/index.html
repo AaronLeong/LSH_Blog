@@ -1,0 +1,152 @@
+{% extends "../inc/base.html" %}
+
+{% block container %}
+
+
+<!-- APP MAIN ==========-->
+<main id="app-main" class="app-main">
+    <div class="profile-header">
+        <div class="profile-cover">
+            <div class="cover-user m-b-lg">
+                <div>
+                    <span class="cover-icon"><i class="fa fa-heart-o"></i></span>
+                </div>
+                <div>
+                    <div class="avatar avatar-xl avatar-circle">
+                        <a href="javascript:void(0)">
+                            <img class="img-responsive" src="/static/admin/assets/images/221.jpg" alt="avatar"/>
+                        </a>
+                    </div><!-- .avatar -->
+                </div>
+                <div>
+                    <span class="cover-icon"><i class="fa fa-envelope-o"></i></span>
+                </div>
+            </div>
+            <div class="text-center">
+                <h4 class="profile-info-name m-b-lg"><a href="javascript:void(0)" class="title-color">John Doe</a></h4>
+                <div>
+                    <a href="javascript:void(0)" class="m-r-xl theme-color"><i class="fa fa-bolt m-r-xs"></i> Web
+                        Developer</a>
+                    <a href="javascript:void(0)" class="theme-color"><i class="fa fa-map-marker m-r-xs"></i>Cairo, Egypt</a>
+                </div>
+            </div>
+        </div><!-- .profile-cover -->
+
+        <div class="promo-footer">
+            <div class="row no-gutter">
+                <div class="col-sm-2 col-sm-offset-3 col-xs-6 promo-tab">
+                    <div class="text-center">
+                        <small>Experience</small>
+                        <h4 class="m-0 m-t-xs">+2 years</h4>
+                    </div>
+                </div>
+                <div class="col-sm-2 col-xs-6 promo-tab">
+                    <div class="text-center">
+                        <small>Hourly Rate</small>
+                        <h4 class="m-0 m-t-xs">12$ - 25$</h4>
+                    </div>
+                </div>
+                <div class="col-sm-2 col-xs-12 promo-tab">
+                    <div class="text-center">
+                        <small>Reviews</small>
+                        <div class="m-t-xs">
+                            <i class="text-primary fa fa-star"></i>
+                            <i class="text-primary fa fa-star"></i>
+                            <i class="text-primary fa fa-star"></i>
+                            <i class="text-primary fa fa-star"></i>
+                            <i class="text-primary fa fa-star-o"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- .promo-footer -->
+    </div><!-- .profile-header -->
+
+
+    <div class="wrap">
+        <section class="app-content">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <form action="/admin/user/save" method="post" class="form-horizontal">
+                        <div class="form-group">
+                            <label for="username" class="col-sm-3">UserName</label>
+                            <div class="col-sm-9">
+                                <input type="text" id="username" name="username" class="form-control" value="{{userInfo.username}}">
+                            </div>
+                        </div><!-- .form-group -->
+
+                        <div class="form-group">
+                            <label for="name" class="col-sm-3">Name</label>
+                            <div class="col-sm-9">
+                                <input type="text" id="name" name="name" class="form-control" value="{{userInfo.name}}">
+                            </div>
+                        </div><!-- .form-group -->
+
+                        <div class="form-group">
+                            <label for="job" class="col-sm-3">Job</label>
+                            <div class="col-sm-9">
+                                <input class="form-control" id="job" type="text"
+                                       placeholder="" name="job" value="{{userInfo.job}}">
+                            </div>
+                        </div><!-- .form-group -->
+                        <div class="form-group">
+                            <label for="responsible" class="col-sm-3">Responsible</label>
+                            <div class="col-sm-9">
+                                <input type="text" id="responsible" name="responsible" class="form-control" value="{{userInfo.responsible}}">
+                            </div>
+                        </div><!-- .form-group -->
+                        <div class="form-group">
+                            <label for="address" class="col-sm-3">Address</label>
+                            <div class="col-sm-9">
+                                <input type="text" id="address" name="address" class="form-control"
+                                       placeholder="" value="{{userInfo.address}}">
+                            </div>
+                        </div><!-- .form-group -->
+
+                        <div class="form-group">
+                            <label for="phone" class="col-sm-3">Phone</label>
+                            <div class="col-sm-9">
+                                <input class="form-control" id="phone" name="phone" type="text"
+                                       placeholder="" value="{{userInfo.phone}}">
+                            </div>
+                        </div><!-- .form-group -->
+
+                        <div class="form-group">
+                            <label for="wechat" class="col-sm-3">Wechat</label>
+                            <div class="col-sm-9">
+                                <input class="form-control" id="wechat" name="wechat" type="text"
+                                       placeholder="" value="{{userInfo.wechat}}">
+                            </div>
+                        </div><!-- .form-group -->
+
+                        <div class="form-group">
+                            <label for="email" class="col-sm-3">Email</label>
+                            <div class="col-sm-9">
+                                <input class="form-control" id="email" name="email" type="text"
+                                       placeholder="" value="{{userInfo.email}}">
+                            </div>
+                        </div><!-- .form-group -->
+                        <div class="form-group">
+                            <label for="sign" class="col-sm-3"> Get in touch</label>
+                            <div class="col-sm-9">
+                                <textarea class="form-control" id="sign" name="sign" type="text">{{userInfo.sign}}</textarea>
+                            </div>
+                        </div><!-- .form-group -->
+
+
+
+
+                        <div class="form-group">
+                            <div class="col-sm-9 col-sm-offset-3">
+                                <button type="submit" class="btn mw-md btn-primary">确定</button>
+                            </div>
+                        </div><!-- .form-group -->
+                    </form>
+                </div>
+            </div><!-- END row -->
+        </section><!-- #dash-content -->
+    </div><!-- .row -->
+
+
+</main>
+    {% endblock %}

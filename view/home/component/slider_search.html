@@ -1,0 +1,15 @@
+{% macro search(q) %}
+<div class="row widget">
+    <div class="col-md-12">
+        <form class="search-widget" action="/post/search" method="get">
+            <div class="input-group">
+                <input type="text" class="form-control" name="q" value="{{q}}" placeholder="search..">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+                </span>
+            </div>
+            <!-- /input-group -->
+        </form>
+    </div>
+</div>
+{% endmacro %}

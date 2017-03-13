@@ -1,0 +1,24 @@
+{% macro posts(posts,navigator) %}
+<div id="primary" class="row">
+    <div class="col-md-12">
+        <div class="">
+            <div class="t-title">
+                <h1>博文列表:</h1>
+            </div>
+            <div class="blog-list">
+                {% asyncEach item in posts.data %}
+                <div class="blog-item">
+                    <span style="color:{{item.color}}">{{item.catename}}</span>
+                    <a href="/post/item/id/{{item._id}}" target="_blank">{{item.title}}</a>
+                </div>
+                {% endeach %}
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <ul class="pagination">
+            {{navigator|safe}}
+        </ul>
+    </div>
+</div>
+{% endmacro %}

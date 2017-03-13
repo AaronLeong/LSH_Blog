@@ -1,0 +1,19 @@
+{% macro categories(categories) %}
+<div class="row widget">
+    <div class="col-md-12">
+        <div class="categories-widget">
+            <h3 class="widget-title">
+                Categories
+            </h3>
+            <ul>
+
+                {% asyncEach item in categories %}
+                <li>
+                    <a href="/post/category/id/{{item._id}}">{{item.catename}}</a>
+                </li>
+                {% endeach %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endmacro %}

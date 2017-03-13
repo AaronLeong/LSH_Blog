@@ -1,0 +1,113 @@
+{% extends "../inc/base.html" %}
+
+{% block container %}
+
+<!-- BEGIN BLOG -->
+<section id="blog" class="blog">
+    <div class="row">
+        <div class="col-md-9">
+            <div id="primary" class="row">
+                <div class="col-md-12">
+
+                    {% for item in blog_list %}
+                    {% include "../component/blog_list_item.html" %}
+                    {% endfor %}
+
+                </div>
+                <div class="col-md-12">
+                    <ul class="pagination">
+                        <li><a href="javascript:;"><i class="fa fa-long-arrow-left"></i></a>
+                        </li>
+                        <li><a href="javascript:;">1</a>
+                        </li>
+                        <li class="active"><a href="javascript:;">2</a>
+                        </li>
+                        <li><a href="javascript:;">3</a>
+                        </li>
+                        <li><a href="javascript:;">4</a>
+                        </li>
+                        <li><a href="javascript:;"><i class="fa fa-long-arrow-right"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 sidebar">
+
+            <div class="row widget">
+                <div class="col-md-12">
+                    <form class="search-widget" action="/post/search" method="get">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="search..">
+                            <span class="input-group-btn">
+                                            <button class="btn btn-default" type="button"><i class="fa fa-search"></i>
+                                            </button>
+                                        </span>
+                        </div>
+                        <!-- /input-group -->
+                    </form>
+                </div>
+            </div>
+            <!-- /widget -->
+
+            <div class="row widget">
+                <div class="col-md-12">
+                    <div class="categories-widget">
+                        <h3 class="widget-title">
+                            Categories
+                        </h3>
+                        <ul>
+                            <li>
+                                <a href="javascript:;">Photography</a> (5)
+                            </li>
+                            <li>
+                                <a href="javascript:;">Web Design</a> (2)
+                            </li>
+                            <li>
+                                <a href="javascript:;">Freebies</a> (5)
+                            </li>
+                            <li>
+                                <a href="javascript:;">Inspiration</a> (12)
+                            </li>
+                            <li>
+                                <a href="javascript:;">Creative</a> (8)
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- /widget -->
+
+            <div class="row widget">
+                <div class="col-md-12">
+                    <div class="recent-post-widget">
+                        <h3 class="widget-title">
+                            Recent Posts
+                        </h3>
+                        <ul>
+                            <li>
+                                <a href="javascript:;">Sed ut perspiciatis unde omnis iste</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">At vero eos et accusamus et iusto</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">Nam libero tempore, cum soluta nobis</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">Temporibus autem quibusdam et aut officiis</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">Itaque earum rerum hic tenetur</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- /widget -->
+        </div>
+    </div>
+</section>
+<!-- END BLOG -->
+
+{% endblock %}

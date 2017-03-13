@@ -1,0 +1,178 @@
+{% extends "../inc/base.html" %}
+
+{% block container %}
+<!-- APP MAIN ==========-->
+<link rel="stylesheet" href="/static/admin/markdown/mditor/css/mditor.min.css"/>
+<script src="/static/admin/markdown/mditor/js/mditor.min.js"></script>
+
+<!-- APP MAIN ==========-->
+<main id="app-main" class="app-main">
+    <div class="wrap">
+        <section class="app-content">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <h3>Post</h3>
+                    <div class="m-b-xl">
+                        liangshihua.cn
+                    </div>
+                </div>
+                <div class="col-md-10 col-md-offset-1">
+                    <form action="/admin/post/update" method="post" class="form-horizontal">
+                        <div class="form-group" hidden="hidden">
+                            <label for="_id" class="col-sm-3">Post ID</label>
+                            <div class="col-sm-9">
+                                <input type="text" id="_id" name="_id" class="form-control" value="{{post._id}}">
+                            </div>
+                        </div><!-- .form-group -->
+                        <div class="form-group" hidden="hidden">
+                            <label for="post_style" class="col-sm-3">If Markdown</label>
+                            <div class="col-sm-9">
+                                <input type="text" id="post_style" name="post_style" class="form-control"
+                                       value="markdown">
+                            </div>
+                        </div><!-- .form-group -->
+
+                        <div class="form-group">
+                            <label for="title" class="col-sm-3">Title</label>
+                            <div class="col-sm-9">
+                                <input type="text" id="title" name="title" class="form-control" value="{{post.title}}">
+                            </div>
+                        </div><!-- .form-group -->
+                        <div class="form-group">
+                            <label for="control-demo-6" class="col-sm-3">Category</label>
+                            <div id="control-demo-6" class="col-sm-9">
+                                <select class="form-control" name="category">
+                                    {% for item in categories %}
+                                    <option value="{{item._id}}" {{ "selected" if item.id==tagselectedId else "" }} >{{item.catename}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div><!-- .form-group -->
+
+                        <div class="form-group">
+                            <label for="control-demo-6" class="col-sm-3">Tags</label>
+                            <div id="control-demo-6" class="col-sm-9">
+                                <select class="form-control" name="tags">
+                                    {% for item in tags %}
+                                    <option value="{{item.id}}" selected="{{ " selected
+                                    " if item.id==cateId else "" }}">{{item.tagname}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div><!-- .form-group -->
+
+                        <div class="form-group">
+                            <label for="description" class="col-sm-3">Abstract</label>
+                            <div class="col-sm-9">
+                                <input type="text" id="description" name="abstract" class="form-control"
+                                       value="{{post.abstract}}">
+                            </div>
+                        </div><!-- .form-group -->
+                        <div class="form-group">
+                            <label for="keywords" class="col-sm-3">Keywords</label>
+                            <div class="col-sm-9">
+                                <input type="text" id="keywords" name="keywords" class="form-control"
+                                       value="{{post.keywords}}">
+                            </div>
+                        </div><!-- .form-group -->
+                        <div class="form-group">
+                            <label for="editor" class="col-sm-3">Content</label>
+                            <div class="col-sm-9">
+                                <textarea name="content" id="editor"
+                                          style="height:400px;max-height:500px;" class="form-control"
+                                          cols="30" rows="10">{{post.content}}</textarea>
+                            </div>
+                        </div><!-- .form-group -->
+                        <div class="form-group">
+                            <div class="col-sm-9 col-sm-offset-3 m-b-sm">
+                                <!-- Use the <code>.checkbox-inline</code> or <code>.radio-inline</code> classes on a series of checkboxes or radios for controls that appear on the same line. -->
+                            </div>
+                            <label class="col-sm-3">Recommend</label>
+                            <div class="col-sm-9">
+                                <div class="checkbox checkbox-danger">
+                                    <input type="checkbox" id="totop" name="totop" {{ "checked" if post.totop=="on" else
+                                    ""}}/>
+                                    <label for="totop">Push To Top</label>
+                                </div>
+                                <div class="checkbox checkbox-primary">
+                                    <input type="checkbox" id="torecom" name="torecom" {{ "checked" if
+                                    post.torecom=="on" else "" }}/>
+                                    <label for="torecom">To Recommend</label>
+                                </div>
+                                <div class="checkbox checkbox-success">
+                                    <input type="checkbox" id="topicrecom" name="topicrecom" {{ "checked" if
+                                    post.topicrecom=="on" else "" }}/>
+                                    <label for="topicrecom">Topic Recommend</label>
+                                </div>
+                                <div class="checkbox checkbox-warning">
+                                    <input type="checkbox" id="caterecom" name="caterecom" {{ "checked" if
+                                    post.caterecom=="on" else "" }}/>
+                                    <label for="caterecom">Category Recommend</label>
+                                </div>
+                            </div>
+                        </div><!-- .form-group -->
+                        <div class="form-group">
+                            <div class="col-sm-9 col-sm-offset-3 m-b-sm">
+                                <!-- Use the <code>.checkbox-inline</code> or <code>.radio-inline</code> classes on a series of checkboxes or radios for controls that appear on the same line. -->
+                            </div>
+                            <label for="publish" class="col-sm-3">Publish</label>
+                            <div class="col-sm-9">
+                                <div class="checkbox checkbox-success">
+                                    <input type="checkbox" id="publish" name="publish" {{ "checked" if
+                                    post.publish=="on" else "" }}/>
+                                    <label for="publish">Yes</label>
+                                </div>
+                            </div>
+                        </div><!-- .form-group -->
+                        <div class="form-group">
+                            <div class="col-sm-9 col-sm-offset-3 m-b-sm">
+                                <!-- Use the <code>.checkbox-inline</code> or <code>.radio-inline</code> classes on a series of checkboxes or radios for controls that appear on the same line. -->
+                            </div>
+                            <label for="allowcomment" class="col-sm-3">Allow comment</label>
+                            <div class="col-sm-9">
+                                <div class="checkbox checkbox-success">
+                                    <input type="checkbox" id="allowcomment" name="allowcomment" {{ "checked" if
+                                    post.allowcomment=="on" else "" }}/>
+                                    <label for="allowcomment">Yes</label>
+                                </div>
+                            </div>
+                        </div><!-- .form-group -->
+
+                        <div class="form-group">
+                            <div class="col-sm-9 col-sm-offset-3">
+                                <button type="submit" class="btn mw-md btn-primary">Submit</button>
+                            </div>
+                        </div><!-- .form-group -->
+                    </form>
+                </div>
+            </div><!-- END row -->
+        </section><!-- #dash-content -->
+    </div><!-- .wrap -->
+
+    <!-- APP FOOTER -->
+    <div class="wrap p-t-0">
+        <footer class="app-footer">
+            <div class="clearfix">
+                <ul class="footer-menu pull-right">
+                    <li><a href="javascript:void(0)">Careers</a></li>
+                    <li><a href="javascript:void(0)">Privacy Policy</a></li>
+                    <li><a href="javascript:void(0)">Feedback <i class="fa fa-angle-up m-l-md"></i></a></li>
+                </ul>
+                <div class="copyright pull-left">Copyright AaronLeong 2016 &copy;</div>
+            </div>
+        </footer>
+    </div>
+    <!-- /#app-footer -->
+</main>
+
+<script typeof="text/javascript ">
+
+    var mditor = new Mditor("#editor", {
+        height: 400,
+        fixedHeight: true
+    });
+    mditor.openPreview();
+
+</script>
+<!--========== END app main -->
+{% endblock %}

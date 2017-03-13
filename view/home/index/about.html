@@ -1,0 +1,54 @@
+{% extends "../inc/base.html" %}
+
+{% block container %}
+<!-- BEGIN BLOG -->
+<section id="blog" class="blog">
+    <div class="row">
+        <div class="col-md-9">
+            <div id="primary" class="row">
+                <div class="col-md-12">
+                    <!-- BEGIN ARTICLE -->
+                    <article class="post">
+                        <div class="post-thumb">
+                            <a href="blog-post.html">
+                                <img src="/static/home/images/post-2.jpg" alt="Blog Post 1"/>
+                            </a>
+                        </div>
+                        <div class="post-title">
+                            <h1><a>About Me</a>
+                            </h1>
+                        </div>
+                        <div class="post-meta">
+                            <span class="author">{{about_me.school}}</span>
+                            <span class="author">{{about_me.major}}</span>
+                        </div>
+                        <div class="post-content">
+                           {{about_me.content|safe}}
+                        </div>
+                    </article>
+                    <!-- END ARTICLE -->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 sidebar">
+
+            <div class="row widget">
+                <div class="col-md-12">
+                    <form class="search-widget" action="/post/search" method="get">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="search..">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+                            </span>
+                        </div>
+                        <!-- /input-group -->
+                    </form>
+                </div>
+            </div>
+            <!-- /widget -->
+        </div>
+    </div>
+</section>
+<!-- END BLOG -->
+
+{% endblock %}

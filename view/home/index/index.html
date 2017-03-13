@@ -1,0 +1,325 @@
+{% extends "../inc/base.html" %}
+
+{% block container %}
+
+<!-- BEGIN HOME -->
+<section id="home" class="home">
+    <!-- Superslides -->
+    <div id="home-slide">
+        <ul class="slides-container text-center">
+            <li>
+                <div class="slide-text">
+                    <h2>花近高楼伤客心</h2>
+                    <span></span>
+                    <br/>
+                </div>
+                <div class="slide-filter"></div>
+                <img src="/static/home/images/slider/slide-1.jpg" class="par" alt="first">
+            </li>
+            <li>
+                <div class="slide-text">
+                    <h2>万方多难此登临</h2>
+                    <span></span>
+                    <br/>
+                </div>
+                <div class="slide-filter"></div>
+                <img src="/static/home/images/slider/slide-2.jpg" class="par" alt="first">
+            </li>
+            <li>
+                <div class="slide-text">
+                    <h2>锦江春色来天地</h2>
+                    <span></span>
+                    <br/>
+                </div>
+                <div class="slide-filter"></div>
+                <img src="/static/home/images/slider/slide-3.jpg" class="par" alt="first">
+            </li>
+            <li>
+                <div class="slide-text">
+                    <h2>玉垒浮云变古今</h2>
+                    <span></span>
+                    <br/>
+                </div>
+                <div class="slide-filter"></div>
+                <img src="/static/home/images/slider/slide-3.jpg" class="par" alt="first">
+            </li>
+        </ul>
+        <nav class="slides-navigation slidez">
+            <a href="javascript:;" class="next">
+                <i class="fa fa-angle-right"></i>
+            </a>
+            <a href="javascript:;" class="prev">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        </nav>
+    </div>
+    <!-- End of Superslide -->
+</section>
+<!-- END HOME -->
+
+<!-- BEGIN SERVICES -->
+<section id="skills" class="services">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="header-content">
+                <h2>Skills</h2>
+                <h3>This is what I am good at</h3>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="service">
+                        <div class="icon-holder">
+                            <i class="fa fa-paper-plane"></i>
+                        </div>
+                        <h3 class="heading">Web Design</h3>
+                        <p class="description">Web design blog bringing design inspiration, how to design a website, web
+                            design tutorials and much more.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="service">
+                        <div class="icon-holder">
+                            <i class="fa fa-diamond"></i>
+                        </div>
+                        <h3 class="heading">Web Programming</h3>
+                        <p class="description">How and in what presentation form they are shown on your computer, are
+                            the targets of web programming</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="service">
+                        <div class="icon-holder">
+                            <i class="fa fa-camera"></i>
+                        </div>
+                        <h3 class="heading">Machine Learning</h3>
+                        <p class="description">Gives computers the ability to learn without being explicitly
+                            programmed.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="service">
+                        <div class="icon-holder">
+                            <i class="fa fa-heartbeat"></i>
+                        </div>
+                        <h3 class="heading">Deep Learning</h3>
+                        <p class="description">It is a branch of machine learning based on a set of algorithms that
+                            attempt to model high level abstractions in data.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="service">
+                        <div class="icon-holder">
+                            <i class="fa fa-life-ring"></i>
+                        </div>
+                        <h3 class="heading">Data Analysis</h3>
+                        <p class="description">It is a process for obtaining raw data and converting it into information
+                            useful for decision-making by users</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="service">
+                        <div class="icon-holder">
+                            <i class="fa fa-rocket"></i>
+                        </div>
+                        <h3 class="heading">Data Visualization</h3>
+                        <p class="description">It refers to the techniques used to communicate data or information by
+                            encoding it as visual objects contained in graphics</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END SERVICES -->
+
+<!-- BEGIN PORTFOLIO -->
+<section id="portfolio" class="portfolio gray">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="header-content">
+                <h2>Portfolio</h2>
+                <h3>Some of my accomplishments</h3>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <ul class="portfolioFilter text-center">
+                <li data-filter="websites">WEB SITES</li>
+                <li data-filter="Artificial-Intelligence">Artificial Intelligence</li>
+                <li data-filter="Data-Analysis">Data Analysis</li>
+                <li data-filter="all">EVERYTHING</li>
+            </ul>
+        </div>
+        <div class="col-md-12 mg-bt-80">
+            <div class="row portfolioContainer  text-center">
+                <div class="col-md-4 col-xs-6 portfolio-item websites">
+                    <a class="popup" href="images/portfolio/portfolio-thumb-1.jpg"
+                       data-lightbox-gallery="team-portfolio">
+                                    <span class="project-hover">
+                                        <span>Designing UI/UX
+                                        </span>
+                                    </span>
+                        <img src="/static/home/images/portfolio/portfolio-thumb-1.jpg" alt="portfolio-thumb-1">
+                    </a>
+                </div>
+                <div class="col-md-4 col-xs-6 portfolio-item Artificial-Intelligence">
+                    <a class="popup" href="images/portfolio/portfolio-thumb-5.jpg"
+                       data-lightbox-gallery="team-portfolio">
+                                    <span class="project-hover">
+                                        <span>Machine Learning
+                                        </span>
+                                    </span>
+                        <img src="/static/home/images/portfolio/portfolio-thumb-5.jpg" alt="portfolio-thumb-5">
+                    </a>
+                </div>
+                <div class="col-md-4 col-xs-6 portfolio-item websites">
+                    <a class="popup" href="images/portfolio/portfolio-thumb-3.jpg" title="Image with title"
+                       data-lightbox-gallery="team-portfolio">
+                                    <span class="project-hover">
+                                        <span>Web Programming
+                                        </span>
+                                    </span>
+                        <img src="/static/home/images/portfolio/portfolio-thumb-3.jpg" alt="portfolio-thumb-3">
+                    </a>
+                </div>
+                <div class="col-md-4 col-xs-6 portfolio-item Data-Analysis">
+                    <a class="popup" href="images/portfolio/portfolio-thumb-4.jpg"
+                       data-lightbox-gallery="team-portfolio">
+                                    <span class="project-hover">
+                                        <span>Data Analysis
+                                        </span>
+                                    </span>
+                        <img src="/static/home/images/portfolio/portfolio-thumb-4.jpg" alt="portfolio-thumb-4">
+                    </a>
+                </div>
+                <div class="col-md-4 col-xs-6 portfolio-item websites">
+                    <a class="popup" href="images/portfolio/portfolio-thumb-2.jpg"
+                       data-lightbox-gallery="team-portfolio">
+                                    <span class="project-hover">
+                                        <span>Website Design
+                                        </span>
+                                    </span>
+                        <img src="/static/home/images/portfolio/portfolio-thumb-2.jpg" alt="portfolio-thumb-2">
+                    </a>
+                </div>
+                <div class="col-md-4 col-xs-6 portfolio-item Artificial-Intelligence">
+                    <a class="popup" href="images/portfolio/portfolio-thumb-6.jpg"
+                       data-lightbox-gallery="team-portfolio">
+                                    <span class="project-hover">
+                                        <span>Deep Learning
+                                        </span>
+                                    </span>
+                        <img src="/static/home/images/portfolio/portfolio-thumb-6.jpg" alt="portfolio-thumb-6">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END PORTFOLIO -->
+
+
+<!-- BEGIN BLOG -->
+<section id="blog-front" class="blog-front gray">
+    <div class="row">
+        <div class="col-md-12 mg-bt-80">
+            <div class="header-content">
+                <h2>Blog</h2>
+                <h3>Thoughts On Technology And Development</h3>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+
+        {% for item in torecomPosts %}
+        <article class="col-md-4 col-sm-6">
+            <figure class="blog-thumb">
+                <img src='{{ item.cover_pic if item.cover_pic !="" else "/static/home/images/blog/blog-1.jpg" }}'
+                     alt="blog-thumb">
+            </figure>
+            <div class="post-area">
+                <a class="post-cat" href="/post/item/id/{{item._id}}">
+                    <h4>Design</h4>
+                </a>
+                <a class="post-title" href="/post/item/id/{{item._id}}">
+                    <h3>{{item.title}}</h3>
+                </a>
+                <p class="post-content">{{item.abstract}}</p>
+            </div>
+        </article>
+        {% endfor %}
+
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <a class="btn blog-btn" href="/post">See what else ...</a>
+        </div>
+    </div>
+</section>
+<!-- END BLOG -->
+
+
+<!-- BEGIN CTA -->
+<section class="cta text-center">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>{{admin_info.job}}</h3>
+            <p>Responsible for designing, developing, and implementing workflow management and tracking system</p>
+            <a href="/index/about" target="_blank" class="btn">About Me</a>
+        </div>
+    </div>
+</section>
+<!-- END CTA -->
+
+<!-- BEGIN CONTACT -->
+<section id="contact" class="contact gray">
+    <div class="row">
+        <div class="col-md-12 mg-bt-80">
+            <div class="header-content">
+                <h2>Contact Me</h2>
+                <h3>Let me know if you have any query</h3>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-6">
+            <div class="address">
+                <h2>Get in touch</h2>
+                <p>{{admin_info.sign}}</p>
+                <h2>My Office</h2>
+                <ul class="office">
+                    <li><i class="fa fa-map-marker"></i> <strong>Address:</strong>
+                        {{admin_info.address}}
+                    </li>
+                    <li><i class="fa fa-phone"></i> <strong>Phone:</strong> {{admin_info.phone}}</li>
+                    <li><i class="fa fa-weixin"></i> <strong>Wechat:</strong> {{admin_info.wechat}}</li>
+                    <li><i class="fa fa-envelope"></i> <strong>Email:</strong>
+                        <a href="mailto:{{admin_info.email}}">{{admin_info.email}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-6">
+            <form id="contact-form" role="form" action="/index/contact" method="post">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="c_name" name="c_name" placeholder="Name">
+                </div>
+
+                <div class="form-group">
+                    <input type="email" class="form-control" id="c_email" name="c_email" placeholder="Email">
+                </div>
+
+                <div class="form-group">
+                    <textarea class="form-control" id="c_message" rows="10" name="c_message"
+                              placeholder="Message"></textarea>
+                </div>
+                <br/>
+                <button type="submit" class="btn">Send Message</button>
+                <div class="ajax-response"></div>
+            </form>
+        </div>
+
+    </div>
+</section>
+<!-- END CONTACT -->
+{% endblock %}

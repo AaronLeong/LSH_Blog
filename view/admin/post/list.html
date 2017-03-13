@@ -1,0 +1,54 @@
+{% extends "../inc/base.html" %}
+
+{% block container %}
+<!-- APP MAIN ==========-->
+<style>
+    .list-group-item span {
+        width: 40px;
+        float: right;
+        margin: 0 5px;
+    }
+</style>
+<main id="app-main" class="app-main">
+    <div class="wrap">
+        <section class="app-content">
+            <div class="m-b-xl">
+                <h1 style="font-size: 48px;">Post List</h1>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">{{posts.count}}</h4>
+                        </div>
+
+                        <ul class="list-group">
+                            {% asyncEach item in posts.data %}
+                            <a href="/admin/post/item/id/{{item._id}}">
+                                <li class="list-group-item">
+                                    {{item.title}}
+                                    <span class="badge badge-success">
+                                        <i class="fa fa-edit" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="badge badge-success">{{item.view_nums}}</span>
+                                    <a href="/admin/post/delect/id/{{item._id}}">
+                                        <span class="badge badge-danger"><i class="fa fa-trash" aria-hidden="true"></i></span>
+                                    </a>
+                                </li>
+                            </a>
+                            {% endeach %}
+                        </ul>
+                        <div class="panel-body">
+
+                            {{navigator|safe}}
+                        </div>
+                    </div>
+                </div><!-- END column -->
+
+            </div><!-- .row -->
+        </section><!-- .app-content -->
+    </div><!-- .wrap -->
+</main>
+
+{% endblock %}

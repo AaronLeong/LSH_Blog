@@ -1,0 +1,94 @@
+{% extends "../inc/base.html" %}
+
+{% block container %}
+
+<!-- APP MAIN ==========-->
+<main id="app-main" class="app-main">
+    <div class="wrap">
+        <section class="app-content">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <h3>Post</h3>
+                    <div class="m-b-xl">
+                        liangshihua.cn
+                    </div>
+                </div>
+                <div class="col-md-10 col-md-offset-1">
+                    <form action="/admin/user/about" method="post" class="form-horizontal">
+
+                        <div class="form-group">
+                            <label for="school" class="col-sm-3">School</label>
+                            <div class="col-sm-9">
+                                <input type="text" id="school" name="school" class="form-control"
+                                       value="{{about_me.school}}">
+                            </div>
+                        </div><!-- .form-group -->
+                        <div class="form-group">
+                            <label for="major" class="col-sm-3">Major</label>
+                            <div class="col-sm-9">
+                                <input type="text" id="major" name="major" class="form-control" value="{{about_me.major}}">
+                            </div>
+                        </div><!-- .form-group -->
+
+                        <div class="form-group">
+                            <label for="editor" class="col-sm-3">Content</label>
+                            <div class="col-sm-9">
+                                <textarea name="content" id="editor"
+                                          style="height:400px;max-height:500px;" class="form-control"
+                                          cols="30" rows="10">{{about_me.content}}</textarea>
+                            </div>
+                        </div><!-- .form-group -->
+
+                        <div class="form-group">
+                            <div class="col-sm-9 col-sm-offset-3">
+                                <button type="submit" class="btn mw-md btn-primary">Submit</button>
+                            </div>
+                        </div><!-- .form-group -->
+                    </form>
+                </div>
+            </div><!-- END row -->
+        </section><!-- #dash-content -->
+    </div><!-- .wrap -->
+
+    <!-- APP FOOTER -->
+    <div class="wrap p-t-0">
+        <footer class="app-footer">
+            <div class="clearfix">
+                <ul class="footer-menu pull-right">
+                    <li><a href="javascript:void(0)">Careers</a></li>
+                    <li><a href="javascript:void(0)">Privacy Policy</a></li>
+                    <li><a href="javascript:void(0)">Feedback <i class="fa fa-angle-up m-l-md"></i></a></li>
+                </ul>
+                <div class="copyright pull-left">Copyright AaronLeong 2016 &copy;</div>
+            </div>
+        </footer>
+    </div>
+    <!-- /#app-footer -->
+</main>
+
+
+<link rel="stylesheet" type="text/css" href="/static/admin/markdown/wangeditor/css/wangEditor.min.css">
+<script type="text/javascript" src="/static/admin/markdown/wangeditor/js/wangEditor.min.js"></script>
+<script typeof="text/javascript ">
+    var editor = new wangEditor('editor');
+    editor.create();
+
+    //    editor.config.uploadParams = {
+    //        __CSRF__:G_csrf
+    //    };
+    editor.config.emotions = {
+        'default': {
+            title: '默认',
+            data: '/static/emotions.data'
+        }
+    };
+    editor.config.uploadImgFileName = 'thumb_img';
+    editor.config.uploadImgUrl = '/admin/file/uploadeditor';
+    console.log(G_csrf);
+    // 表情
+    editor.create();
+
+</script>
+{% endblock %}
+
+

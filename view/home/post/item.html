@@ -1,0 +1,55 @@
+{% extends "../inc/base.html" %}
+
+{% block container %}
+<!-- BEGIN BLOG -->
+<section id="blog" class="blog">
+    <div class="row">
+        <div class="col-md-9">
+            <div id="primary" class="row">
+                <div class="col-md-12">
+                    <!-- BEGIN ARTICLE -->
+                    <article class="post">
+                        <div class="post-thumb">
+                            <a>
+                                <img src="/static/home/images/post-2.jpg" alt="{{post.title}}"/>
+                            </a>
+                        </div>
+                        <div class="post-title">
+                            <h1><a>{{post.title}}</a>
+                            </h1>
+                        </div>
+                        <div class="post-meta">
+                            <span class="author">Aaron Leong</span>
+                            <span class="dates">{{post.create_time}}</span>
+                            <span class="comments-count">
+                                <a>{{post.view_nums}} View</a>
+                            </span>
+                        </div>
+                        <div class="post-content">
+                            <p>{{post.content|safe}}</p>
+
+                        </div>
+                    </article>
+                    <!-- END ARTICLE -->
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 sidebar">
+            {% import "../component/slider_search.html" as search%}
+            {{ search.search(q) }}
+            <!-- /widget -->
+
+
+            {% import "../component/slider_categories.html" as slider_categories%}
+            {{ slider_categories.categories(categories) }}
+
+            <!-- /widget -->
+            {% import "../component/slider_recent_posts.html" as slider_recents_posts%}
+            {{ slider_recents_posts.recents_posts(recentPosts) }}
+        </div>
+    </div>
+</section>
+<!-- END BLOG -->
+
+{% endblock %}

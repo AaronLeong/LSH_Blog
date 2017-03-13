@@ -1,0 +1,66 @@
+{% extends "../inc/base.html" %}
+
+{% block container %}
+<style>
+    .blog-list {
+        margin-left: 30px;
+    }
+
+    .blog-list .blog-item {
+        height: 50px;
+    }
+
+    .blog-item a:hover {
+        color: chartreuse;
+    }
+
+    .blog-list span {
+        font-size: 14px;
+        border-right: 1px solid #cccccc;
+        height: 20px;
+        display: inline-block;
+        width: 40px;
+        line-height: 21px;
+    }
+
+    .blog-list a {
+        color: rgba(0, 0, 0, 0.9);
+        text-align: left;
+        line-height: 50px;
+        -webkit-transition: all ease .3s;
+        transition: all ease .3s;
+        font-size: 16px;
+        text-decoration: none;
+        outline: 0;
+        padding-left: 4px;
+    }
+</style>
+
+<!-- BEGIN BLOG -->
+<section id="blog" class="blog">
+    <div class="row">
+        <div class="col-md-9">
+            {% import "../component/blog_list.html" as blog_list%}
+            {{ blog_list.posts(posts,navigator) }}
+            <!-- /widget -->
+        </div>
+        <div class="col-md-3 sidebar">
+            {% import "../component/slider_search.html" as search%}
+            {{ search.search(q) }}
+            <!-- /widget -->
+
+
+            {% import "../component/slider_categories.html" as slider_categories%}
+            {{ slider_categories.categories(categories) }}
+
+            <!-- /widget -->
+            {% import "../component/slider_recent_posts.html" as slider_recents_posts%}
+            {{ slider_recents_posts.recents_posts(recentPosts) }}
+
+            <!-- /widget -->
+        </div>
+    </div>
+</section>
+<!-- END BLOG -->
+
+{% endblock %}
